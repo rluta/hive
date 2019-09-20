@@ -383,6 +383,9 @@ public class HiveConf extends Configuration {
     MAPREDTASKCLEANUPNEEDED(ShimLoader.getHadoopShims().getHadoopConfNames().get("MAPREDTASKCLEANUPNEEDED"), false, "", true),
 
     // Metastore stuff. Be sure to update HiveConf.metaVars when you add something here!
+    METASTORE_CLIENT_FACTORY_CLASS("hive.metastore.client.factory.class", 
+        "org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClientFactory", 
+        "The name of the factory class that produces objects implementing the IMetaStoreClient interface."),
     METASTOREWAREHOUSE("hive.metastore.warehouse.dir", "/user/hive/warehouse",
         "location of default database for the warehouse"),
     METASTOREURIS("hive.metastore.uris", "",
